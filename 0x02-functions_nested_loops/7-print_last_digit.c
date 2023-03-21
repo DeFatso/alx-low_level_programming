@@ -4,7 +4,7 @@
  *
  *@i: parameter
  *
- * Returns k.
+ * Return:  k.
  */
 int print_last_digit(int i)
 {
