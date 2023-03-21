@@ -1,7 +1,9 @@
 #include "main.h"
 /**
- * print sign - function that prints aign.
+ * print_sign - function that prints sign.
+ *
  *@n: parameter
+
  * Return: 1, 0 and -1.
  */
 int print_sign(int n)
