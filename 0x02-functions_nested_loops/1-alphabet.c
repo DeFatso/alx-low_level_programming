@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * main - check the code
+ * print_alphabet- function gthats prints the alphabet in lower case
  *
  * Return: Always 0.
  */
