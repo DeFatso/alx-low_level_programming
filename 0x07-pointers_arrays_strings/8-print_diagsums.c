@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * print_diagsums - prints the sum of the two diagonals 
- * @a: pointer 
+ * print_diagsums - prints the sum of the two diagonals
+ * @a: pointer
  * @size: which diagonal to add
  */
 
