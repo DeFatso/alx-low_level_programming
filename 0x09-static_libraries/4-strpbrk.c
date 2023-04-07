@@ -7,17 +7,13 @@
  *
  * Return: returns null
  */
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
 char *_strpbrk(char *s, char *accept)
 {
-	int x, n;
-
-	for (x = 0; s[x] != '\0'; x++)
-	{
-		for (n = 0; accept[n] != '\0'; n++)
-		{
-			if (s[x] == accept[n])
-				return (s + x);
-		}
-	}
-	return (NULL);
+	return strpbrk(s, accept);
 }
