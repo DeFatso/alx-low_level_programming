@@ -1,18 +1,13 @@
 #include <stdio.h>
+#include "main.h"
 /**
- *main - main function
- *
- *@argv : parameter
- *@argc : parrameter one
- * Return: returns argc
+ * main - main function
+ * @argc : parameter 1
+ * @argv : parameter 2
+ * Return : returns 0
  */
-int main(int argc, char *argv[])
+int main(int argc, char *argv[] __attribute__((unused)))
 {
-	int i;
-
-	for (i = 0; i < argc; i++)
-	{
-	printf("%s\n", argv[i]);
-	}
-	return (argc);
+	printf("%d\n", argc - 1);
+	return (0);
 }
