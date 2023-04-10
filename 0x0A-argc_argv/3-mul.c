@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	if (argc > 1)
 	{
 	for (a = 1; a < argc; a++)
-	mul *= atoi(argv[a]);
+	mul *= _atoi(argv[a]);
 	printf("%d\n", mul);
 	}
 	else
