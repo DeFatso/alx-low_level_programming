@@ -13,10 +13,11 @@ char *argstostr(int ac, char **av)
 int i, j, len = 0;
 char *str;
 str = malloc(sizeof(char) * len);
+str[len - 1] = '\0';
 
 for (i = 0; i < ac; i++)
 {
-	len += strlen(av[i]) + 2;
+	len += strlen(av[i]) + 1;
 }
 malloc(sizeof(char) * len);
 
@@ -31,8 +32,6 @@ strcpy(&str[j], av[i]);
 j += strlen(av[i]);
 str[j++] = '\n';
 }
-
-/*str[len - 1] = '\0';*/
 
 return (str);
 }
