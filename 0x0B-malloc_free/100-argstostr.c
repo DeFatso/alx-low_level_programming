@@ -16,7 +16,7 @@ str = malloc(sizeof(char) * len);
 
 for (i = 0; i < ac; i++)
 {
-	len += strlen(av[i]) + 1;
+	len += strlen(av[i]) + 2;
 }
 malloc(sizeof(char) * len);
 
