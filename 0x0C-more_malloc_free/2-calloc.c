@@ -9,15 +9,16 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *arr = malloc(size * sizeof(int));
+	void *ptr = calloc(nmemb, size);
 
-	if (arr == NULL)
-	{
-		exit(EXIT_FAILURE);
-	}
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
-	return (arr);
+	if (ptr == NULL)
+	{
+		exit(EXIT_FAILURE);
+	}
+
+	return (ptr);
 }
