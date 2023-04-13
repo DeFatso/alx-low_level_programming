@@ -18,6 +18,5 @@ void *malloc_checked(unsigned int b)
 	{
 	exit(98);
 	}
-	printf("%p\n", ptr);
 	return (ptr);
 }
