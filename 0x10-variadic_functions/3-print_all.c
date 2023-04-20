@@ -14,7 +14,6 @@ void print_all(const char * const format, ...)
 	int i;
 	float f;
 	char *s;
-
 	va_list list;
 
 	va_start(list, format);
@@ -38,22 +37,15 @@ void print_all(const char * const format, ...)
 			case 's':
 				s = va_arg(list, char *);
 				if (s == NULL)
-				{
-					printf("(nil)");
-				}
+					printf("nil");
 				else
-				{
 					printf("%s", s);
-				}
 				break;
 			default:
 				break;
 		}
-
 		if (a < strlen(format) - 1)
-		{
 			printf(", ");
-		}
 		a++;
 	}
 	printf("\n");
