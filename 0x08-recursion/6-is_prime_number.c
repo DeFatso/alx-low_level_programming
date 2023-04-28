@@ -12,7 +12,7 @@ int is_prime(int n, int i)
 if (n < 2)
 return (0);
 
-if (i > n/2)
+if (i > n / 2)
 return (1);
 
 if (n % i == 0)
