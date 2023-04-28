@@ -28,4 +28,3 @@ s++;
 }
 return (sign * result);
 }
-}
