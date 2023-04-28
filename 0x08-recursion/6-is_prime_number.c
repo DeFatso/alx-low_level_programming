@@ -8,13 +8,17 @@
  */
 int is_prime(int n, int i)
 {
-	if (n < 2)
-		return (0);
-	if (i > sqrt(n))
-		return (1);
-	if (n % i == 0)
-		return (0);
-	return (is_prime(n, i + 1));
+
+if (n < 2)
+return (0);
+
+if (i > n/2)
+return (1);
+
+if (n % i == 0)
+return (0);
+
+return (is_prime(n, i + 1));
 }
 /**
  * is_prime_number - Checks if a number is a prime number
