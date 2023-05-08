@@ -9,6 +9,7 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <string.h>
 void copy_file(const char *file_from, const char *file_to);
 int _putchar(char c);
 ssize_t read_textfile(const char *filename, size_t letters);
