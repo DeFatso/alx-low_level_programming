@@ -39,7 +39,7 @@ int main(int ac, char **av)
 
 /**
  * elf_header - prints info in the elf header
- * @hdr: parameter
+ * @header: parameter
  */
 void elf_header(const Elf64_Ehdr *header)
 {
@@ -52,7 +52,7 @@ void elf_header(const Elf64_Ehdr *header)
 	}
 	printf("\n");
 	printf("Class: %d-bit\n", header->e_ident[EI_CLASS] == ELFCLASS64 ? 64 : 32);
-	printf("Data: %s\n", header->e_ident[EI_DATA] == ELFDATA2LSB ? \
+	printf("Data: %s\n", header->e_ident[EI_DATA] == ELFDATA2LSB ?
 			"2's complement, little endian" :
 			header->e_ident[EI_DATA] == ELFDATA2MSB ? "2's complement, big endian" :
 			 "Unknown");
