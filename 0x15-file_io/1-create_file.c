@@ -22,11 +22,11 @@ int create_file(const char *filename, char *text_content)
 	}
 	if (text_content != NULL)
 	{
-		fprintf (file, "%s", text_content);
+		fprintf(file, "%s", text_content);
 	}
 	else
 	{
-		fprintf (file, "%s", "");
+		fprintf(file, "%s", "");
 	}
 
 	fclose(file);
