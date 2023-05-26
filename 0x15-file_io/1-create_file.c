@@ -14,14 +14,17 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
+	if (access(filename, R_OK) == 0)
+	{
+		fprintf(stderr, "File '%s' already exists and has read permissions\n",
+				filename);
+		return (-1);
+	}
+
 	file = fopen(filename, "w+");
 	if (file == NULL)
 	{
 		perror("fopen");
-		return (0);
-	}
-	if (filename == NULL)
-	{
 		return (-1);
 	}
 	if (text_content != NULL)
