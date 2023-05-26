@@ -34,5 +34,11 @@ int create_file(const char *filename, char *text_content)
 	}
 
 	fclose(file);
+
+	if (chmod(filename, S_IRUSR | S_IWUSR) == -1)
+	{
+		perror("chmod");
+		return (0);
+	}
 	return (1);
 }
