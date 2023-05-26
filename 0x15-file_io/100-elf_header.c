@@ -21,6 +21,12 @@ int main(int ac, char **av)
 		fprintf(stderr, "Error: Unable to open file\n");
 		return (98);
 	}
+
+	if (read(x, &header, sizeof(header)) != sizeof(header))
+	{
+		fprintf(stderr, "Error: Unable to read ELF header\n");
+		return (98);
+	}
 	if
 		(
 			header.e_ident[EI_MAG0] != ELFMAG0 ||
