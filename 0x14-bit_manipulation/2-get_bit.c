@@ -9,7 +9,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int bits;
 	unsigned long int mask;
-	
+
 	bits = sizeof(unsigned long int) * 8;
 
 	if (index >= bits)
