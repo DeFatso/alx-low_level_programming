@@ -1,7 +1,6 @@
 #include "main.h"
 /**
  * print_error - prints error
- * @exit_code: parameter
  * @message: parameter
  */
 void print_error(const char *message)
@@ -34,7 +33,8 @@ void copy_file(const char *file_from, const char *file_to)
 	{
 		exit_with_error("Can't read from file", 98);
 	}
-	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR |
+			S_IRGRP | S_IWGRP | S_IROTH);
 	if (fd_to == -1)
 	{
 		close(fd_from);
