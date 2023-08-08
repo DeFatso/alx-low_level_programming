@@ -7,29 +7,31 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file;
-	char *buf;
-	size_t n;
-	ssize_t total = 0;
+	FILE *file_ptr;
+	char *buffer;
+	size_t read_size;
+	ssize_t total_read = 0;
 
-	file = fopen(filename, "r");
-	if (file == NULL)
+	file_ptr = fopen(filename, "r");
+	if (file_ptr == NULL)
 	{
 		return (0);
 	}
 
-	buf = (char *) malloc(letters + 1);
-	if (buf == NULL)
+	buffer = (char *)malloc(letters + 1);
+	if (buffer == NULL)
 	{
-		fclose(file);
+		fclose(file_ptr);
 		return (0);
 	}
-	while ((n = fread(buf, 1, letters, file)) > 0)
+
+	while ((read_size = fread(buffer, 1, letters, file_ptr)) > 0)
 	{
-		total += n;
-		fwrite(buf, 1, n, stdout);
+		total_read += read_size;
+		fwrite(buffer, 1, read_size, stdout);
 	}
-	free(buf);
-	fclose(file);
-	return (total);
+
+	free(buffer);
+	fclose(file_ptr);
+	return (total_read);
 }
