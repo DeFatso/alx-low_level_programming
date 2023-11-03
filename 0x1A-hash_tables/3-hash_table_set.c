@@ -3,7 +3,7 @@
  * hash_table_set - Add an element to the hash table.
  * @ht: The hash table to add/update the key/value pair.
  * @key: The key (must not be an empty string).
- * @value: The value associated with the key (duplicated; can be an empty string).
+ * @value: The value associated with the key ).
  *
  * Return: 1 if the operation succeeded, 0 otherwise.
  */
@@ -35,12 +35,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		current = current->next;
 	}
-
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 	{
 		free(new_node);
 		return (0);
 	}
+	new_node->value = strdup(value);
+	if (new_node->value == NULL)
+		return (0);
+
+	new_node->next = ht->array[index];
+	ht->array[index] = new_node;
+
 	return (1);
 }
