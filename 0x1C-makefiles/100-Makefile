@@ -2,22 +2,27 @@ CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(NAME)
 
-$(OBJ): %.o: %.c m.h
-	$(CC) -c $< -o $@ -Wall -Werror -Wextra -pedantic
-
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME) -Wall -Werror -Wextra -pedantic
-
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) *~ \#*\# $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
 
 fclean: clean oclean
-	$(RM) $(NAME)
 
 re: fclean all
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
+
+%.o: %.c
+	$(CC) -c $< -o $@ $(CFLAGS)
+
+ifeq ($(wildcard m.h),)
+$(error Header file m.h not found)
+endif
